@@ -160,7 +160,7 @@ formatted_mean = "{:.2f}".format(inflation_mean_value * 1)
 formatted_median = "{:.2f}".format(inflation_median_value * 1)
 formatted_min = "{:.2f}".format(inflation_min_value * 1)
 
-st.write('Average Annual Inflation Rate:',formatted_mean)
-st.write(formatted_median)
-st.write(formatted_min)
+st.write('Average Cost Increase Factore:${formatted_mean:,.0f}')
+st.write('Median Cost Increase Factor:${formatted_median:,0f}')
+st.write('Minimum Cost Increase Factor:${formatted_min:,.0f}')
 
