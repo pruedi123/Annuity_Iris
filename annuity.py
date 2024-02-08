@@ -126,7 +126,7 @@ elementwise_min = elementwise_product_df.min().min()  # Calculate the minimum of
 
 # Output the results using st.write
 st.write("Results for Annuity Income Stream:")
-st.write(f"Mean: {result_mean}")
+st.write(f'Average Spending Value of the Annuity: ${result_mean:,.0f}')
 st.write(f"Median: {result_median}")
 st.write(f"Minimum: {result_min}")
 
