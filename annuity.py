@@ -131,6 +131,7 @@ st.write(cost_of_annuity)
 
 # Output the results using st.write
 st.write("Results for Annuity Income Stream:")
+st.write(f'Cost of the Annuity: ${cost_of_annuity:,.0f}')
 st.write(f'Average Spending Value of the Annuity: ${result_mean:,.0f}')
 st.write(f'Median Spending Value of the Annuity: ${result_median:,.0f}')
 st.write(f'Lowest Spending Value of the Annuity: ${result_min:,.0f}')
