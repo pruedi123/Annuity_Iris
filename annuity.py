@@ -111,7 +111,7 @@ result_df = cpi_end_val_df * income_goal_df.values
 # st.write(result_df)
 
 # Calculate mean, median, and minimum for result_df
-# This is the mean, median, and minimum for of each row of data in result_df of each row of data
+# This is the mean, median, and minimum for of each row of data in sourceresult_df of each row of data
 
 result_mean = result_df.mean().mean()  # Calculate the mean of all elements
 result_median = result_df.median().median()  # Calculate the median of all elements
