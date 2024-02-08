@@ -161,6 +161,6 @@ formatted_median = "{:.2f}".format(inflation_median_value * 1)
 formatted_min = "{:.2f}".format(inflation_min_value * 1)
 
 # Format these numbers as currency without decimal places and display
-st.write(f'Average Cost Increase Factor: ${inflation_mean_value:,.0f}')
-st.write(f'Median Cost Increase Factor: ${inflation_median_value:,.0f}')
-st.write(f'Minimum Cost Increase Factor: ${inflation_min_value:,.0f}')
+st.write(f'Average Cost Increase Factor: ${inflation_mean_value:,.2f}')
+st.write(f'Median Cost Increase Factor: ${inflation_median_value:,.2f}')
+st.write(f'Minimum Cost Increase Factor: ${inflation_min_value:,.2f}')
