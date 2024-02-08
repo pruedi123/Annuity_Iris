@@ -12,7 +12,7 @@ import plotly.graph_objects as go
 import math
 # import time
 
-
+st.write(paul)
 maximum_number_of_rows_of_data_to_use = 802
 
 # Streamlit slider for income goal
