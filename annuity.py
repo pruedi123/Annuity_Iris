@@ -138,7 +138,7 @@ st.write(f'Actual Cost to Get Real Income Stream Gauarantee: ${cost_of_annuity_r
 
 
 
-st.write("\nResults for Iris:")
+st.markdown("# Results for Iris:")
 st.write(f'Total Cost to fund with Iris: ${total_cost_int:,.0f}')
 st.write(f"Mean: {elementwise_mean}")
 st.write(f"Median: {elementwise_median}")
