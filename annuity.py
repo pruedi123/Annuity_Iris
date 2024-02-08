@@ -44,7 +44,7 @@ matrix_cost_factors = [
 
 
 # Create a Pandas DataFrame for matrix cost factors
-portfolio_funding_matrix_cost_all_columns = pd.DataFrame({'Cost to fund equivalent income stream with Iris': matrix_cost_factors})
+portfolio_funding_matrix_cost_all_columns = pd.DataFrame({'Cost': matrix_cost_factors})
 
 # Adjust the length of portfolio_funding_matrix_cost_all_columns to match number_of_years
 portfolio_funding_matrix_cost = portfolio_funding_matrix_cost_all_columns.head(maximum_number_of_years_in_plan)
