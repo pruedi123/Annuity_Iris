@@ -163,3 +163,4 @@ formatted_min = "{:.2f}".format(inflation_min_value * 1)
 st.write('Average Annual Inflation Rate:',formatted_mean)
 st.write(formatted_median)
 st.write(formatted_min)
+
