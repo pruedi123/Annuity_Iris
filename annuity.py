@@ -124,6 +124,11 @@ elementwise_mean = elementwise_product_df.mean().mean()  # Calculate the mean of
 elementwise_median = elementwise_product_df.median().median()  # Calculate the median of all elements
 elementwise_min = elementwise_product_df.min().min()  # Calculate the minimum of all elements
 
+annuity_rate = .0621
+cost_of_annuity = (income_goal * 12) / annuity_rate
+st.write(cost_of_annuity)
+
+
 # Output the results using st.write
 st.write("Results for Annuity Income Stream:")
 st.write(f'Average Spending Value of the Annuity: ${result_mean:,.0f}')
