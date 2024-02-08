@@ -131,6 +131,7 @@ st.write(f'Median Spending Value of the Annuity: ${result_median:,.0f}')
 st.write(f'Lowest Spending Value of the Annuity: ${result_min:,.0f}')
 
 st.write("\nResults for Iris:")
+st.write('paul')
 st.write(f'Total Cost to fund with Iris: ${total_cost_int:,.0f}')
 st.write(f"Mean: {elementwise_mean}")
 st.write(f"Median: {elementwise_median}")
