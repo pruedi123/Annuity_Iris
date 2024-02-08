@@ -130,7 +130,7 @@ elementwise_mean = elementwise_product_df.mean().mean()  # Calculate the mean of
 elementwise_median = elementwise_product_df.median().median()  # Calculate the median of all elements
 elementwise_min = elementwise_product_df.min().min()  # Calculate the minimum of all elements
 
-annuity_rate = .0621
+annuity_rate = annuity_rate
 cost_of_annuity = (income_goal) / annuity_rate
 cost_of_annuity_real = (income_goal / result_median) *  cost_of_annuity
 
