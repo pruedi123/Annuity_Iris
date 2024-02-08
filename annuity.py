@@ -125,7 +125,7 @@ elementwise_median = elementwise_product_df.median().median()  # Calculate the m
 elementwise_min = elementwise_product_df.min().min()  # Calculate the minimum of all elements
 
 annuity_rate = .0621
-cost_of_annuity = (income_goal * 12) / annuity_rate
+cost_of_annuity = (income_goal) / annuity_rate
 st.write(cost_of_annuity)
 
 
