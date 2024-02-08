@@ -134,7 +134,7 @@ st.write(f'Cost of the Annuity: ${cost_of_annuity:,.0f}')
 st.write(f'Average Spending Value of the Annuity: ${result_mean:,.0f}')
 st.write(f'Median Spending Value of the Annuity: ${result_median:,.0f}')
 st.write(f'Lowest Spending Value of the Annuity: ${result_min:,.0f}')
-# st.write(f'Actual Cost to Get Real Income Stream Gauarantee: ${cost_of_annuity_real:,.0f}')
+st.write(f'Actual Cost to Get Real Income Stream Gauarantee: ${cost_of_annuity_real:,.0f}')
 
 
 
