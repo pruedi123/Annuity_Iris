@@ -140,9 +140,9 @@ st.write(f'Actual Cost to Get Real Income Stream Gauarantee: ${cost_of_annuity_r
 
 st.markdown("# Results for Iris:")
 st.write(f'Total Cost to fund with Iris: ${total_cost_int:,.0f}')
-st.write(f"Mean: {elementwise_mean}")
-st.write(f"Median: {elementwise_median}")
-st.write(f"Minimum: {elementwise_min}")
+st.write(f'Mean: ${elementwise_mean:,.0f}')
+st.write(f'Median: ${elementwise_median:,.0f}')
+st.write(f'Minimum: ${elementwise_min:,.0f}')
 
 
 # now for raw inflation data
