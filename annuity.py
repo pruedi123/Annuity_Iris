@@ -55,7 +55,7 @@ multiplied_df['Cost'] *= goal_df['Income Goal'].values
 total_cost = multiplied_df.sum()
 # Output only the total cost value
 total_cost_int = int(total_cost)
-st.write(f'Total Cost to fund with Iris: ${total_cost_int:,.2f}')
+st.write(f'Total Cost to fund with Iris: ${total_cost_int:,.0f}')
 
 # Display the resulting DataFrame
 # st.write(multiplied_df)
