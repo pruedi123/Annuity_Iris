@@ -126,8 +126,7 @@ elementwise_min = elementwise_product_df.min().min()  # Calculate the minimum of
 
 annuity_rate = .0621
 cost_of_annuity = (income_goal) / annuity_rate
-st.write(cost_of_annuity)
-
+cost_of_annuity_real = (income_goal / result_median) *  cost_of_annuity
 
 # Output the results using st.write
 st.write("Results for Annuity Income Stream:")
@@ -135,6 +134,9 @@ st.write(f'Cost of the Annuity: ${cost_of_annuity:,.0f}')
 st.write(f'Average Spending Value of the Annuity: ${result_mean:,.0f}')
 st.write(f'Median Spending Value of the Annuity: ${result_median:,.0f}')
 st.write(f'Lowest Spending Value of the Annuity: ${result_min:,.0f}')
+st.write(f'Actual Cost to Get Real Income Stream Gauarantee: ${cost_of_annuity_real:,.0f}')
+
+
 
 st.write("\nResults for Iris:")
 st.write(f'Total Cost to fund with Iris: ${total_cost_int:,.0f}')
