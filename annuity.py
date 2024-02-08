@@ -53,7 +53,7 @@ portfolio_funding_matrix_cost = portfolio_funding_matrix_cost_all_columns.head(m
 multiplied_df = portfolio_funding_matrix_cost.copy()
 multiplied_df['Cost'] *= goal_df['Income Goal'].values
 total_cost = multiplied_df.sum()
-st.write('Total Cost to fund with Iris',total_cost)
+st.write('Total Cost to fund with Iris',total_cost * 1)
 
 # Display the resulting DataFrame
 # st.write(multiplied_df)
