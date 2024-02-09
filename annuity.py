@@ -63,10 +63,6 @@ total_cost = multiplied_df.sum()
 total_cost_int = int(total_cost)
 
 
-# Display the resulting DataFrame
-# st.write(multiplied_df)
-
-
 
 # Pull in the end_val.xlsx spreadsheet to get ending value data
 
@@ -78,8 +74,6 @@ end_val_df = pd.read_excel('end_val.xlsx', header=None)
 
 resized_end_val_df = end_val_df.iloc[:maximum_number_of_rows_of_data_to_use, :maximum_number_of_years_in_plan]
 # st.write(resized_end_val_df)
-
-
 
 # Extract the row as a Series for broadcasting
 cost_series = multiplied_df.iloc[0]
@@ -137,18 +131,17 @@ cost_of_annuity_real = (income_goal / result_median) *  cost_of_annuity
 # Output the results using st.write
 st.markdown("# Results for Annuity Income Stream:")
 st.write(f'Cost of the Annuity: ${cost_of_annuity:,.0f}')
-st.write(f'Average Spending Value of the Annuity: ${result_mean:,.0f}')
-st.write(f'Median Spending Value of the Annuity: ${result_median:,.0f}')
-st.write(f'Lowest Spending Value of the Annuity: ${result_min:,.0f}')
 st.write(f'Actual Cost to Get Real Income Stream Gauarantee: ${cost_of_annuity_real:,.0f}')
-
-
-
-st.markdown("# Results for Iris:")
 st.write(f'Total Cost to fund with Iris: ${total_cost_int:,.0f}')
+
+st.write(f'Average Spending Value of the Annuity: ${result_mean:,.0f}')
 st.write(f'Average Spending with Iris: ${elementwise_mean:,.0f}')
+
+st.write(f'Median Spending Value of the Annuity: ${result_median:,.0f}')
 st.write(f'Median Spending with Iris: ${elementwise_median:,.0f}')
-st.write(f'Minimum Spending with Iris: ${elementwise_min:,.0f}')
+
+st.write(f'Lowest Spending Value of the Annuity: ${result_min:,.0f}')
+st.write(f'Lowest Spending with Iris: ${elementwise_min:,.0f}')
 
 
 # now for raw inflation data
