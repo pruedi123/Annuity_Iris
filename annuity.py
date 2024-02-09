@@ -143,7 +143,6 @@ st.write(f'Lowest Spending Value of the Annuity: ${result_min:,.0f}')
 st.write(f'Actual Cost to Get Real Income Stream Gauarantee: ${cost_of_annuity_real:,.0f}')
 
 
-
 st.markdown("# Results for Iris:")
 st.write(f'Total Cost to fund with Iris: ${total_cost_int:,.0f}')
 
