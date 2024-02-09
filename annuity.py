@@ -17,7 +17,7 @@ st.write('paul')
 maximum_number_of_rows_of_data_to_use = 802
 
 # Streamlit slider for income goal
-income_goal = st.slider("Select your income goal:", 1000, 100000, step=100)
+income_goal = st.slider("Select your income goal:", 1000, 100000,20000, step=100)
 # Get the annuity rate from the user
 annuity_rate = st.number_input("Enter Annuity Rate:", min_value=0.04, max_value=0.10, value=0.06, step=0.001)
 
