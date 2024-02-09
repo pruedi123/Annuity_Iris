@@ -146,7 +146,10 @@ st.write(f'Actual Cost to Get Real Income Stream Gauarantee: ${cost_of_annuity_r
 
 st.markdown("# Results for Iris:")
 st.write(f'Total Cost to fund with Iris: ${total_cost_int:,.0f}')
-st.write(f'Average Spending with Iris: ${elementwise_mean:,.0f}')
+
+
+# Combine both messages into one st.write call
+st.write(f'Average Spending with Iris: ${elementwise_mean:,.0f} vs. Average Spending Value of the Annuity: ${result_mean:,.0f}')
 st.write(f'Median Spending with Iris: ${elementwise_median:,.0f}')
 st.write(f'Minimum Spending with Iris: ${elementwise_min:,.0f}')
 
