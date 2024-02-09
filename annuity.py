@@ -133,12 +133,15 @@ st.markdown("# Results for Annuity Income Stream:")
 st.write(f'Cost of the Annuity: ${cost_of_annuity:,.0f}')
 st.write(f'Actual Cost to Get Real Income Stream Gauarantee: ${cost_of_annuity_real:,.0f}')
 st.write(f'Total Cost to fund with Iris: ${total_cost_int:,.0f}')
+st.write("")  # This adds a space
 
 st.write(f'Average Spending Value of the Annuity: ${result_mean:,.0f}')
 st.write(f'Average Spending with Iris: ${elementwise_mean:,.0f}')
+st.write("")  # This adds a space
 
 st.write(f'Median Spending Value of the Annuity: ${result_median:,.0f}')
 st.write(f'Median Spending with Iris: ${elementwise_median:,.0f}')
+st.write("")  # This adds a space
 
 st.write(f'Lowest Spending Value of the Annuity: ${result_min:,.0f}')
 st.write(f'Lowest Spending with Iris: ${elementwise_min:,.0f}')
