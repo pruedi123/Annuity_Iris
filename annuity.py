@@ -19,16 +19,16 @@ maximum_number_of_rows_of_data_to_use = 802
 # Streamlit slider for income goal
 income_goal = st.slider("Select your income goal:", 1000, 100000,20000, step=100)
 # Get the annuity rate from the user
-annuity_rate = st.number_input("Enter Annuity Rate:", min_value=0.04, max_value=0.10, value=0.06, step=0.001)
+# annuity_rate = st.number_input("Enter Annuity Rate:", min_value=0.04, max_value=0.10, value=0.06, step=0.001)
 
 # Display the annuity rate with 4 decimal places
-st.write(f"Annuity Rate Entered: {annuity_rate:.4f}")
+# st.write(f"Annuity Rate Entered: {annuity_rate:.4f}")
 
 # Display the selected income goal
-st.write(f"Your selected income goal is: ${income_goal}")
+# st.write(f"Your selected income goal is: ${income_goal}")
 
 # Streamlit slider for number of years
-number_of_years = st.slider("Select the number of years:", 1, 35,30, step=1)
+number_of_years = 41 #st.slider("Select the number of years:", 1, 41,30, step=1)
 
 # Use number_of_years for the maximum_number_of_years_in_plan
 maximum_number_of_years_in_plan = number_of_years
@@ -108,61 +108,142 @@ cpi_end_val_df = cpi_end_val_df.iloc[:, :number_of_columns]
 # Multiply cpi_end_val_df by income_goal_df element-wise
 # This gives us each years ending real value of the income stream
 result_df = cpi_end_val_df * income_goal_df.values
+result_df = result_df.iloc[:802,:]
+# # st.write(result_df)
+# # Display the resulting DataFrame
+# # st.write(result_df)
 
-# Display the resulting DataFrame
-# st.write(result_df)
+# # Calculate mean, median, and minimum for result_df
+# # This is the mean, median, and minimum for of each row of data in sourceresult_df of each row of data
 
-# Calculate mean, median, and minimum for result_df
-# This is the mean, median, and minimum for of each row of data in sourceresult_df of each row of data
+# result_mean = result_df.mean().mean()  # Calculate the mean of all elements
+# result_median = result_df.median().median()  # Calculate the median of all elements
+# result_min = result_df.min().min()  # Calculate the minimum of all elements
 
-result_mean = result_df.mean().mean()  # Calculate the mean of all elements
-result_median = result_df.median().median()  # Calculate the median of all elements
-result_min = result_df.min().min()  # Calculate the minimum of all elements
+# # Calculate mean, median, and minimum for elementwise_product_df
+# elementwise_mean = elementwise_product_df.mean().mean()  # Calculate the mean of all elements
+# elementwise_median = elementwise_product_df.median().median()  # Calculate the median of all elements
+# elementwise_min = elementwise_product_df.min().min()  # Calculate the minimum of all elements
 
-# Calculate mean, median, and minimum for elementwise_product_df
-elementwise_mean = elementwise_product_df.mean().mean()  # Calculate the mean of all elements
-elementwise_median = elementwise_product_df.median().median()  # Calculate the median of all elements
-elementwise_min = elementwise_product_df.min().min()  # Calculate the minimum of all elements
+# annuity_rate = annuity_rate
+# cost_of_annuity = (income_goal) / annuity_rate
+# cost_of_annuity_real = (income_goal / result_median) *  cost_of_annuity
 
-annuity_rate = annuity_rate
-cost_of_annuity = (income_goal) / annuity_rate
-cost_of_annuity_real = (income_goal / result_median) *  cost_of_annuity
+# # Output the results using st.write
+# st.markdown("# Results for Annuity Income Stream:")
+# st.write(f'Cost of the Annuity: ${cost_of_annuity:,.0f}')
+# st.write(f'Actual Cost to Get Real Income Stream Gauarantee: ${cost_of_annuity_real:,.0f}')
+# st.write(f'Total Cost to fund with Iris: ${total_cost_int:,.0f}')
+# st.write("-------")  # This adds a space
 
-# Output the results using st.write
-st.markdown("# Results for Annuity Income Stream:")
-st.write(f'Cost of the Annuity: ${cost_of_annuity:,.0f}')
-st.write(f'Actual Cost to Get Real Income Stream Gauarantee: ${cost_of_annuity_real:,.0f}')
-st.write(f'Total Cost to fund with Iris: ${total_cost_int:,.0f}')
-st.write("-------")  # This adds a space
+# st.write(f'Average Spending Value of the Annuity: ${result_mean:,.0f}')
+# st.write(f'Average Spending with Iris: ${elementwise_mean:,.0f}')
+# st.write("")  # This adds a space
 
-st.write(f'Average Spending Value of the Annuity: ${result_mean:,.0f}')
-st.write(f'Average Spending with Iris: ${elementwise_mean:,.0f}')
-st.write("")  # This adds a space
+# st.write(f'Median Spending Value of the Annuity: ${result_median:,.0f}')
+# st.write(f'Median Spending with Iris: ${elementwise_median:,.0f}')
+# st.write("")  # This adds a space
 
-st.write(f'Median Spending Value of the Annuity: ${result_median:,.0f}')
-st.write(f'Median Spending with Iris: ${elementwise_median:,.0f}')
-st.write("")  # This adds a space
-
-st.write(f'Lowest Spending Value of the Annuity: ${result_min:,.0f}')
-st.write(f'Lowest Spending with Iris: ${elementwise_min:,.0f}')
-
-
-# now for raw inflation data
-
-# Assuming resized_end_val_df is your DataFrame
-# Select the first 802 rows of the 30th column and calculate the mean
+# st.write(f'Lowest Spending Value of the Annuity: ${result_min:,.0f}')
+# st.write(f'Lowest Spending with Iris: ${elementwise_min:,.0f}')
 
 
-inflation_mean_value = 1 / cpi_end_val_df.iloc[:maximum_number_of_rows_of_data_to_use, number_of_years - 1].mean()
-inflation_median_value = 1 / cpi_end_val_df.iloc[:maximum_number_of_rows_of_data_to_use, number_of_years - 1].median()
-inflation_min_value = 1 / cpi_end_val_df.iloc[:maximum_number_of_rows_of_data_to_use, number_of_years - 1].min()
+# # now for raw inflation data
+
+# # Assuming resized_end_val_df is your DataFrame
+# # Select the first 802 rows of the 30th column and calculate the mean
 
 
-formatted_mean = "{:.2f}".format(inflation_mean_value * 1)
-formatted_median = "{:.2f}".format(inflation_median_value * 1)
-formatted_min = "{:.2f}".format(inflation_min_value * 1)
+# inflation_mean_value = 1 / cpi_end_val_df.iloc[:maximum_number_of_rows_of_data_to_use, number_of_years - 1].mean()
+# inflation_median_value = 1 / cpi_end_val_df.iloc[:maximum_number_of_rows_of_data_to_use, number_of_years - 1].median()
+# inflation_min_value = 1 / cpi_end_val_df.iloc[:maximum_number_of_rows_of_data_to_use, number_of_years - 1].min()
 
-# Format these numbers as currency without decimal places and display
-st.write(f'Average Cost Increase Factor: {inflation_mean_value:,.2f}')
-st.write(f'Median Cost Increase Factor: {inflation_median_value:,.2f}')
-st.write(f'Minimum Cost Increase Factor: {inflation_min_value:,.2f}')
+
+# formatted_mean = "{:.2f}".format(inflation_mean_value * 1)
+# formatted_median = "{:.2f}".format(inflation_median_value * 1)
+# formatted_min = "{:.2f}".format(inflation_min_value * 1)
+
+# # Format these numbers as currency without decimal places and display
+# st.write(f'Average Cost Increase Factor: {inflation_mean_value:,.2f}')
+# st.write(f'Median Cost Increase Factor: {inflation_median_value:,.2f}')
+# st.write(f'Minimum Cost Increase Factor: {inflation_min_value:,.2f}')
+
+# st.write("")
+# st.write("")
+
+
+my_years_to_test = st.slider("Number of years in retirement",1,35,30,1) 
+        
+my_subset_years_to_test = st.slider("Last N years to look at",1,20,5,1)
+
+years_to_test = my_years_to_test
+
+
+
+# st.write('years to test',years_to_test)
+
+look_at_sub_years = my_subset_years_to_test
+subset_range_begin = years_to_test - look_at_sub_years
+# st.write('subset begin',subset_range_begin)
+test_result_all = result_df.iloc[:802,1:41]
+test_result_subset = result_df.iloc[:802,subset_range_begin:years_to_test]
+# st.write('look at sub years',look_at_sub_years)
+
+# st.write(test_result_subset)
+
+percentile_used = st.slider("Choose Percentile",1,100,25,1)
+percentile_used_adjusted = percentile_used / 100
+
+
+percentile_used_int = percentile_used 
+
+# st.write(percentile_used_adjusted)
+
+formatted_percentile_used = "{:.0f}".format(percentile_used) 
+
+test_result_subset_mean_series = test_result_subset.mean(axis=1)
+
+test_result_subset_mean = test_result_subset_mean_series.mean()
+test_result_subset_median = test_result_subset_mean_series.median()
+test_result_subset_pctle = test_result_subset_mean_series.quantile(percentile_used_adjusted)
+
+formatted_result_mean = "${:.0f}".format(test_result_subset_mean)
+formatted_result_median = "${:.0f}".format(test_result_subset_median)
+formatted_result_percentile  = "${:.0f}".format(test_result_subset_pctle)
+
+
+result_mean_pct = (test_result_subset_mean / income_goal) * 100
+result_median_pct= (test_result_subset_median / income_goal) * 100
+result_percentile_pct = (test_result_subset_pctle / income_goal) * 100
+
+
+
+formatted_result_mean_pct = "{:.0f}%".format(result_mean_pct) 
+formatted_result_median_pct = "{:.0f}%".format(result_median_pct) 
+formatted_result_percentile_pct = "{:.0f}%".format(result_percentile_pct) 
+
+
+
+formatted_income_goal = "Original Income Stream = ${:.0f}".format(income_goal)
+st.write(formatted_income_goal)
+
+
+formatted_years_subset_value = "{:.0f}".format(look_at_sub_years) 
+formatted_years_total_period = "{:.0f}".format(years_to_test) 
+st.write("Last", formatted_years_subset_value, "Years Average income result of", formatted_years_total_period, "year period")
+
+st.write("")
+st.write("")
+
+st.write("Average income result of = ",formatted_result_mean,"which is:",formatted_result_mean_pct,"of original goal.")
+st.write("Median income result of = ",formatted_result_median,"which is:",formatted_result_median_pct,"of original goal.")
+st.write(formatted_percentile_used,"Percent of the income results were lower than",formatted_result_percentile,"which is:",formatted_result_percentile_pct,"of original goal.")
+
+
+
+
+# st.write("Five year average result =",formatted_result_df_5)
+
+
+
+# st.write("Ten year average result =",formatted_result_df_10)
